@@ -4,8 +4,10 @@ import './todo.css'
 const TodoList =(props)=>{
 
     const handleCheck= (event) =>{
-    console.log(event.target.checked);
-    props.onSelectList(event.target.value); 
+    let checkedListObj = {
+     'item':event.target.value, 'checked':event.target.checked
+    }
+    props.onSelectList(checkedListObj); 
 
     }
    return <div >

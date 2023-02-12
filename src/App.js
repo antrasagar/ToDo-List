@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import {useState, useEffect , createContext,React, useContext} from 'react';
+
+import {useState, useEffect ,React} from 'react';
 import './App.css';
 import Display from './display';
 import TodoList from './Todolist';
@@ -21,7 +21,11 @@ function App() {
 
   const handleListChange=(props)=>{
     var listUpdate= [...displayList];
-    listUpdate.push(props)
+    console.log(props);
+    var updatedList = [];
+    if(props.checked) {
+      listUpdate.push(props.item);
+    }
     setDisplayList(listUpdate);
   }
 
